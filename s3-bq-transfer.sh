@@ -20,9 +20,9 @@ do
     table_name=$(echo "$i" | sed 's:/*$::')  # remove slash
     echo "Create $table_name .... "
 
-    # create Bigquery Table
+    # create Bigquery Table   --expiration 3600 \
     bq mk \
-    --expiration 3600 \
+   
     --table \
     --description "s3 2 bq table" \
     $PROJECT_ID:$DATASET.$table_name
